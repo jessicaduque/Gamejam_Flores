@@ -19,7 +19,7 @@ public class Player : Singleton<Player>
     // Puzzle fields
     private Interactor _interactor;
     private bool _canInteract = true;
-    private bool _isHoldingItem = true;
+    private bool _isHoldingItem;
 
     // Posições para sementes e órgãos
     [SerializeField] private Transform _orgaoTransformPoint;
@@ -169,21 +169,52 @@ public class Player : Singleton<Player>
     #endregion
 
     #region Control of held items
-
-    public void HoldItem(GameObject item)
+    // Player started or stopped holding item
+    public void HoldItemControl(bool state, GameObject item=null)
     {
-        Debug.Log("Player is holding " + item.name + ".");
-        _isHoldingItem = true;
+        if (state)
+        {
+            Debug.Log("Player is holding " + item.name + ".");
+        }
+        else
+        {
+            Debug.Log("Player stopped holding " + _itemHeld.name + ".");
+        }
+        _itemHeld = item;
+        _isHoldingItem = state;
     }
 
     public void ControlRegador(bool state)
     {
         _thisRegador.SetActive(state);
-        _isHoldingItem = state;
+        HoldItemControl(state, (state ? _thisRegador : null));
     }
 
-    public void ControlSemente(GameObject semente)
+    public void ControlSemente(bool state, GameObject semente=null)
     {
+        if (state)
+        {
+            semente.transform.position = _sementeTransformPoint.position;
+            semente.transform.SetParent(this.gameObject.transform);
+        }
+        else
+        {
+            Destroy(_itemHeld);
+        }
+        HoldItemControl(state, (state ? semente : null));
+    }
+    public void ControlOrgao(bool state, GameObject orgao = null)
+    {
+        if (state)
+        {
+            orgao.transform.position = _orgaoTransformPoint.position;
+            orgao.transform.SetParent(this.gameObject.transform);
+        }
+        else
+        {
+            Destroy(_itemHeld);
+        }
+        HoldItemControl(state, (state ? orgao : null));
     }
 
     #endregion

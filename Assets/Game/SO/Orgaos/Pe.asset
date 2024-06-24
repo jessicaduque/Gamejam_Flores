@@ -16,7 +16,7 @@ MonoBehaviour:
   organNormalSprite: {fileID: 0}
   organNormalPrefab: {fileID: 0}
   organRottenPrefab: {fileID: 0}
-  organSeedPrefab: {fileID: 0}
-  organSignPrefab: {fileID: 0}
+  organSeedPrefab: {fileID: 459979643743780403, guid: 312d6a0ae12eda443b4c5274006d4ac4, type: 3}
+  organSignPrefab: {fileID: 7485611745203253205, guid: 2c956e5a7e4c0644a97faaf14490fbd4, type: 3}
   organTimeGrow: 5
   organTimeRot: 5

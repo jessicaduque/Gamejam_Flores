@@ -14,9 +14,6 @@ public class TerrenoPlantacao : MonoBehaviour, IInteractable
     // Órgão plantado
     private OrgaoSO _plantedOrganSO;
 
-    // Tempo para plantação e apodrecimento do órgão
-    private float _plantTime = 4f;
-
     // Transform da placa para representar planta
     [SerializeField] Transform _signTransform;
     [SerializeField] GameObject _currentSign;
@@ -41,7 +38,7 @@ public class TerrenoPlantacao : MonoBehaviour, IInteractable
     #region Time counts for plantations
     private IEnumerator PlantTime()
     {
-        yield return new WaitForSeconds(_plantTime);
+        yield return new WaitForSeconds((!_plantReady ? _plantedOrganSO.organTimeGrow : _plantedOrganSO.organTimeRot));
 
         if (!_plantReady)
         {
@@ -113,13 +110,15 @@ public class TerrenoPlantacao : MonoBehaviour, IInteractable
         // Se tiver regador e a semente plantada sem água, regue a planta
         if (holdable.holdableTypeName == "regador" && _hasPlant && !_isWatered)
         {
+            Debug.Log("Terrain watered by player.");
             WaterTerrain();
             return;
         }
         // Se tiver segurando uma semente e a terra não tenha planta
         if (holdable.holdableTypeName == "semente" && !_hasPlant)
         {
-            PlantTerrain(_player._itemHeld.GetComponent<Orgao>().GetOrganSO());
+            PlantTerrain(_player._itemHeld.GetComponent<Semente>().GetOrganSO());
+            _player.ControlSemente(false);
             return;
         }
 

@@ -19,7 +19,9 @@ public class Caixa : MonoBehaviour, IInteractable
 
     public void InteractControl(Interactor interactor)
     {
-        Debug.Log("Pegar semente");
+        GameObject semente = Instantiate(_organSO.organSeedPrefab, transform.position, Quaternion.identity);
+        semente.GetComponent<Semente>().SetOrganSO(_organSO);
+        _player.ControlSemente(true, semente);
     }
     #endregion
 }

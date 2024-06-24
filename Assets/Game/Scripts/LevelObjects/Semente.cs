@@ -21,4 +21,11 @@ public class Semente : MonoBehaviour, IHoldable
         _organSO = so;
     }
     #endregion
+
+    #region Get
+    public OrgaoSO GetOrganSO()
+    {
+        return _organSO;
+    }
+    #endregion
 }

@@ -10,10 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf868f115ab0def42af0d7d49c74449c, type: 3}
-  m_Name: Mao
+  m_Name: Pe
   m_EditorClassIdentifier: 
-  organName: "M\xE3o"
+  organName: "P\xE9"
   organNormalSprite: {fileID: 0}
   organNormalPrefab: {fileID: 0}
   organRottenPrefab: {fileID: 0}
+  organSeedPrefab: {fileID: 0}
   organSignPrefab: {fileID: 0}
+  organTimeGrow: 5
+  organTimeRot: 5

@@ -13,6 +13,9 @@ public class Client : MonoBehaviour
     // Sobre o tempo
     private float _waitTime;
 
+    // Bancada onde cliente está
+    private Bancada _bancada;
+
     private SOManager _soManager => SOManager.I;
     private void InicialSetup()
     {
@@ -44,6 +47,15 @@ public class Client : MonoBehaviour
     }
     private void ClientLeave()
     {
-
+        _bancada.RemoveClient();
     }
+
+    #region Set Bancada
+
+    public void SetBancada(Bancada bancada)
+    {
+        _bancada = bancada;
+    }
+
+    #endregion
 }

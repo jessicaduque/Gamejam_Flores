@@ -14,7 +14,7 @@ public class SOManager : Singleton<SOManager>
     public GameObject RandomizeClientPrefab()
     {
         GameObject client = _possibleClientPrefabs[Random.Range(0, _possibleClientPrefabs.Length)];
-        while(client != _lastClientPrefab)
+        while(client == _lastClientPrefab)
         {
             client = _possibleClientPrefabs[Random.Range(0, _possibleClientPrefabs.Length)];
         }

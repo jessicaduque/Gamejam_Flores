@@ -18,3 +18,5 @@ MonoBehaviour:
   organRottenPrefab: {fileID: 0}
   organSeedPrefab: {fileID: 0}
   organSignPrefab: {fileID: 0}
+  organTimeGrow: 9
+  organTimeRot: 5

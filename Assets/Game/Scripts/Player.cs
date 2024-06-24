@@ -20,6 +20,12 @@ public class Player : Singleton<Player>
     private Interactor _interactor;
     private bool _canInteract = true;
     private bool _isHoldingItem = true;
+
+    // Posições para sementes e órgãos
+    [SerializeField] private Transform _orgaoTransformPoint;
+    [SerializeField] private Transform _sementeTransformPoint;
+    // Regador do player
+    [SerializeField] private GameObject _thisRegador;
     public GameObject _itemHeld { get; private set; }
 
     private new void Awake()
@@ -168,6 +174,16 @@ public class Player : Singleton<Player>
     {
         Debug.Log("Player is holding " + item.name + ".");
         _isHoldingItem = true;
+    }
+
+    public void ControlRegador(bool state)
+    {
+        _thisRegador.SetActive(state);
+        _isHoldingItem = state;
+    }
+
+    public void ControlSemente(GameObject semente)
+    {
     }
 
     #endregion

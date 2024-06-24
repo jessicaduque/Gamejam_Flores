@@ -8,4 +8,6 @@ public class OrgaoSO : ScriptableObject
     public GameObject organRottenPrefab;
     public GameObject organSeedPrefab;
     public GameObject organSignPrefab;
+    public float organTimeGrow;
+    public float organTimeRot;
 }

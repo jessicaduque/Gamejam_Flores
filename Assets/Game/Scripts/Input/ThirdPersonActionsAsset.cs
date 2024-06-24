@@ -160,7 +160,7 @@ public partial class @ThirdPersonActionsAsset: IInputActionCollection2, IDisposa
                 {
                     ""name"": """",
                     ""id"": ""1bfc1037-f489-436a-aed9-643edb363b1e"",
-                    ""path"": ""<Keyboard>/enter"",
+                    ""path"": ""<Keyboard>/i"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

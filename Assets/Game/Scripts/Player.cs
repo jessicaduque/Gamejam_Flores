@@ -162,6 +162,16 @@ public class Player : Singleton<Player>
 
     #endregion
 
+    #region Control of held items
+
+    public void HoldItem(GameObject item)
+    {
+        Debug.Log("Player is holding " + item.name + ".");
+        _isHoldingItem = true;
+    }
+
+    #endregion
+
     #region Get
     public bool GetIsHoldingItem()
     {

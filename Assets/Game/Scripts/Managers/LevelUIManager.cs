@@ -1,18 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class LevelUIManager : MonoBehaviour
+using Utils.Singleton;
+public class LevelUIManager : Singleton<LevelUIManager>
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    private new void Awake() { }
 }

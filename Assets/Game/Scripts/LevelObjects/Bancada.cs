@@ -1,55 +1,47 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Bancada : IInteractable
+public class Bancada : MonoBehaviour, IInteractable
 {
     public string interactionPrompt => throw new System.NotImplementedException();
-
-    private Client[] _clients = new Client[2];
+    // Times to wait before creating a new client
+    [SerializeField] float _startSceneClientSpawnTimeMin = 3;
+    [SerializeField] float _startSceneClientSpawnTimeMax = 5;
+    // Point to instantiate client
+    [SerializeField] private Transform _clientTransformPoint;
+    // Info about current client at bancada
+    private GameObject _currentClient;
+    private Client _currentClientScript;
     private Player _player => Player.I;
+    private SOManager _soManager => SOManager.I;
+    private GameController _gameController => GameController.I;
 
     #region Client control
-    public bool AddClient(Client client)
+    public void AddClient()
     {
-        if (!HasClients())
-        {
-            return false;
-        }
+        _currentClient = Instantiate(_soManager.RandomizeClientPrefab(), _clientTransformPoint.position, Quaternion.identity);
+        _currentClientScript = _currentClient.GetComponent<Client>();
+    }
+    private void RemoveClient()
+    {
+        _currentClient = null;
+        Destroy(_currentClient);
+        _currentClientScript = null;
+        _currentClient = null;
+    }
 
-        if (_clients[0] == null)
-        {
-            _clients[0] = client;
-            return true;
-        }
-        else
-        {
-            _clients[1] = client;
-            return true;
-        }
-        
-    }
-    private void RemoveClient(Client client)
+    private IEnumerator CreateClientWait(float clientNormalSpawnTimeMin = 2, float clientNormalSpawnTimeMax = 7)
     {
-        if (_clients[0] == client)
-        {
-            _clients[0] = null;
-        }
-        else if (_clients[1] == client)
-        {
-            _clients[1] = null;
-        }
-    }
-    private bool HasClients()
-    {
-        return _clients[0] != null || _clients[0] != null;
+        yield return new WaitForSeconds(Random.Range(clientNormalSpawnTimeMin, clientNormalSpawnTimeMax));
+
+        AddClient();
     }
     #endregion
 
     #region Interaction
     public bool CanInteract()
     {
-        if (_player.GetIsHoldingItem() && HasClients())
+        if (_player.GetIsHoldingItem() && _currentClient != null)
         {
             if(_player._itemHeld.GetComponent<IHoldable>().holdableTypeName == "orgao")
             {

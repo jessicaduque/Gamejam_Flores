@@ -1,18 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Utils.Singleton;
 
-public class SOManager : MonoBehaviour
+public class SOManager : Singleton<SOManager>
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private GameObject[] _possibleClientPrefabs;
+    private GameObject _lastClientPrefab;
+
+    [SerializeField] private OrgaoSO[] _possibleOrganSOs;
+
+    private new void Awake() { }
+
+    #region Randomization
+    public GameObject RandomizeClientPrefab()
     {
-        
+        GameObject client = _possibleClientPrefabs[Random.Range(0, _possibleClientPrefabs.Length)];
+        while(client != _lastClientPrefab)
+        {
+            client = _possibleClientPrefabs[Random.Range(0, _possibleClientPrefabs.Length)];
+        }
+        return client;
     }
 
-    // Update is called once per frame
-    void Update()
+    public OrgaoSO RandomizeOrganSO()
     {
-        
+        return _possibleOrganSOs[Random.Range(0, _possibleOrganSOs.Length)];
     }
+    #endregion
+
 }

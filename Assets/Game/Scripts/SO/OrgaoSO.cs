@@ -6,5 +6,6 @@ public class OrgaoSO : ScriptableObject
     public Sprite organNormalSprite;
     public GameObject organNormalPrefab;
     public GameObject organRottenPrefab;
+    public GameObject organSeedPrefab;
     public GameObject organSignPrefab;
 }

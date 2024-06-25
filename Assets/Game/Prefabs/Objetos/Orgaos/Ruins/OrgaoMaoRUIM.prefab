@@ -75,6 +75,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2659475544870105942, guid: 6e6719d4361799142a5ecacef5629e7a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2659475544870105942, guid: 6e6719d4361799142a5ecacef5629e7a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2659475544870105942, guid: 6e6719d4361799142a5ecacef5629e7a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2659475544870105942, guid: 6e6719d4361799142a5ecacef5629e7a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -116,7 +128,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6086817017532972109, guid: 6e6719d4361799142a5ecacef5629e7a, type: 3}
       propertyPath: m_Name
-      value: OrgaoMao
+      value: OrgaoMaoRUIM
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

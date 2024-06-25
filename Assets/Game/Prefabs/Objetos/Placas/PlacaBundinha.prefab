@@ -50,10 +50,98 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8724811086540510757, guid: 47f98a2ed6fc2c4469a8421c76ae423b, type: 3}
       propertyPath: m_Name
-      value: PlacaMao Variant
+      value: PlacaBundinha
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3125190197514194589, guid: 47f98a2ed6fc2c4469a8421c76ae423b, type: 3}
+    - {fileID: 6007246657387456407, guid: 47f98a2ed6fc2c4469a8421c76ae423b, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 292097306816057186, guid: 47f98a2ed6fc2c4469a8421c76ae423b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8851206799095261315}
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 47f98a2ed6fc2c4469a8421c76ae423b, type: 3}
+--- !u!4 &5126161068711034734 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 292097306816057186, guid: 47f98a2ed6fc2c4469a8421c76ae423b, type: 3}
+  m_PrefabInstance: {fileID: 4840934909766512652}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8945889380042580488
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5126161068711034734}
+    m_Modifications:
+    - target: {fileID: 500993909006584459, guid: e6d6c05bfde27fe4ea4636aa93f15edc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 116.56999
+      objectReference: {fileID: 0}
+    - target: {fileID: 500993909006584459, guid: e6d6c05bfde27fe4ea4636aa93f15edc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 116.56999
+      objectReference: {fileID: 0}
+    - target: {fileID: 500993909006584459, guid: e6d6c05bfde27fe4ea4636aa93f15edc, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 29.142498
+      objectReference: {fileID: 0}
+    - target: {fileID: 500993909006584459, guid: e6d6c05bfde27fe4ea4636aa93f15edc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 500993909006584459, guid: e6d6c05bfde27fe4ea4636aa93f15edc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.173
+      objectReference: {fileID: 0}
+    - target: {fileID: 500993909006584459, guid: e6d6c05bfde27fe4ea4636aa93f15edc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 500993909006584459, guid: e6d6c05bfde27fe4ea4636aa93f15edc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.50008726
+      objectReference: {fileID: 0}
+    - target: {fileID: 500993909006584459, guid: e6d6c05bfde27fe4ea4636aa93f15edc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.49991274
+      objectReference: {fileID: 0}
+    - target: {fileID: 500993909006584459, guid: e6d6c05bfde27fe4ea4636aa93f15edc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.49991274
+      objectReference: {fileID: 0}
+    - target: {fileID: 500993909006584459, guid: e6d6c05bfde27fe4ea4636aa93f15edc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.50008726
+      objectReference: {fileID: 0}
+    - target: {fileID: 500993909006584459, guid: e6d6c05bfde27fe4ea4636aa93f15edc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -89.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 500993909006584459, guid: e6d6c05bfde27fe4ea4636aa93f15edc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 500993909006584459, guid: e6d6c05bfde27fe4ea4636aa93f15edc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 500993909006584459, guid: e6d6c05bfde27fe4ea4636aa93f15edc, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 988597167558529073, guid: e6d6c05bfde27fe4ea4636aa93f15edc, type: 3}
+      propertyPath: m_Name
+      value: Placa2_Bundin
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 47f98a2ed6fc2c4469a8421c76ae423b, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: e6d6c05bfde27fe4ea4636aa93f15edc, type: 3}
+--- !u!4 &8851206799095261315 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 500993909006584459, guid: e6d6c05bfde27fe4ea4636aa93f15edc, type: 3}
+  m_PrefabInstance: {fileID: 8945889380042580488}
+  m_PrefabAsset: {fileID: 0}

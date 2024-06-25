@@ -35,6 +35,9 @@ public class Client : MonoBehaviour
     {
         // Randomize amount of organs and which ones are wanted
         _amountOrgansWanted = Random.Range(1, 3);
+        // Make there be higher chances of player getting 1
+        if (_amountOrgansWanted == 2 && Random.Range(1, 4) == 2)
+            _amountOrgansWanted = 1;
         _organsSOWanted = new OrgaoSO[_amountOrgansWanted];
         for(int i=0; i< _organsSOWanted.Length; i++)
         {

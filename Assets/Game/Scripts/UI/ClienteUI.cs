@@ -11,6 +11,10 @@ public class ClienteUI : MonoBehaviour
     private List<Image> _currentImages;
     private int _itemAmount = 0;
 
+    [SerializeField] private Color _corVerde;
+    [SerializeField] private Color _corAmarelo;
+    [SerializeField] private Color _corVermelho;
+
     // Espera do cliente
     [SerializeField] private Image _waitImage;
 
@@ -70,6 +74,19 @@ public class ClienteUI : MonoBehaviour
     public void UpdateWaitSprite(float fillAmount)
     {
         _waitImage.fillAmount = fillAmount;
+
+        if (fillAmount < 0.33f)
+        {
+            _waitImage.color = _corVerde;
+        }
+        else if (fillAmount < 0.66f)
+        {
+            _waitImage.color = _corAmarelo;
+        }
+        else
+        {
+            _waitImage.color = _corVermelho;
+        }
     }
 
     public void TurnOffWait()

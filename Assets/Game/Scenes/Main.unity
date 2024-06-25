@@ -1423,9 +1423,57 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1890395699}
     - target: {fileID: 1279161210385469497, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
+      propertyPath: _corVerde.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1279161210385469497, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
+      propertyPath: _corVerde.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1279161210385469497, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
+      propertyPath: _corVerde.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1279161210385469497, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
+      propertyPath: _corVerde.r
+      value: 0.16458082
+      objectReference: {fileID: 0}
+    - target: {fileID: 1279161210385469497, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
       propertyPath: _regarImage
       value: 
       objectReference: {fileID: 1460807907}
+    - target: {fileID: 1279161210385469497, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
+      propertyPath: _corAmarelo.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1279161210385469497, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
+      propertyPath: _corAmarelo.b
+      value: 0.081131995
+      objectReference: {fileID: 0}
+    - target: {fileID: 1279161210385469497, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
+      propertyPath: _corAmarelo.g
+      value: 0.66040355
+      objectReference: {fileID: 0}
+    - target: {fileID: 1279161210385469497, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
+      propertyPath: _corAmarelo.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1279161210385469497, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
+      propertyPath: _corVermelho.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1279161210385469497, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
+      propertyPath: _corVermelho.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1279161210385469497, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
+      propertyPath: _corVermelho.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1279161210385469497, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
+      propertyPath: _corVermelho.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6520852906363776510, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
       propertyPath: m_Name
       value: PlantableTerrain (2)
@@ -2433,9 +2481,57 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 664026370}
     - target: {fileID: 1279161210385469497, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
+      propertyPath: _corVerde.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1279161210385469497, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
+      propertyPath: _corVerde.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1279161210385469497, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
+      propertyPath: _corVerde.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1279161210385469497, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
+      propertyPath: _corVerde.r
+      value: 0.16458082
+      objectReference: {fileID: 0}
+    - target: {fileID: 1279161210385469497, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
       propertyPath: _regarImage
       value: 
       objectReference: {fileID: 212919583}
+    - target: {fileID: 1279161210385469497, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
+      propertyPath: _corAmarelo.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1279161210385469497, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
+      propertyPath: _corAmarelo.b
+      value: 0.081131995
+      objectReference: {fileID: 0}
+    - target: {fileID: 1279161210385469497, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
+      propertyPath: _corAmarelo.g
+      value: 0.66040355
+      objectReference: {fileID: 0}
+    - target: {fileID: 1279161210385469497, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
+      propertyPath: _corAmarelo.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1279161210385469497, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
+      propertyPath: _corVermelho.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1279161210385469497, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
+      propertyPath: _corVermelho.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1279161210385469497, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
+      propertyPath: _corVermelho.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1279161210385469497, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
+      propertyPath: _corVermelho.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6520852906363776510, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
       propertyPath: m_Name
       value: PlantableTerrain (1)
@@ -2966,6 +3062,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _orderBalloon: {fileID: 1428554761}
   _orderPlaceForItems: {fileID: 168608915}
+  _corVerde: {r: 0.16470589, g: 1, b: 0, a: 1}
+  _corAmarelo: {r: 1, g: 0.65882355, b: 0.08235294, a: 1}
+  _corVermelho: {r: 1, g: 0, b: 0, a: 1}
   _waitImage: {fileID: 1908606022}
 --- !u!1 &1677695592
 GameObject:
@@ -3963,9 +4062,57 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1955934942}
     - target: {fileID: 1279161210385469497, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
+      propertyPath: _corVerde.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1279161210385469497, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
+      propertyPath: _corVerde.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1279161210385469497, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
+      propertyPath: _corVerde.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1279161210385469497, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
+      propertyPath: _corVerde.r
+      value: 0.16458082
+      objectReference: {fileID: 0}
+    - target: {fileID: 1279161210385469497, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
       propertyPath: _regarImage
       value: 
       objectReference: {fileID: 1336192122}
+    - target: {fileID: 1279161210385469497, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
+      propertyPath: _corAmarelo.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1279161210385469497, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
+      propertyPath: _corAmarelo.b
+      value: 0.081131995
+      objectReference: {fileID: 0}
+    - target: {fileID: 1279161210385469497, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
+      propertyPath: _corAmarelo.g
+      value: 0.66040355
+      objectReference: {fileID: 0}
+    - target: {fileID: 1279161210385469497, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
+      propertyPath: _corAmarelo.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1279161210385469497, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
+      propertyPath: _corVermelho.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1279161210385469497, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
+      propertyPath: _corVermelho.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1279161210385469497, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
+      propertyPath: _corVermelho.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1279161210385469497, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
+      propertyPath: _corVermelho.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6520852906363776510, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
       propertyPath: m_Name
       value: PlantableTerrain (3)
@@ -4179,6 +4326,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _orderBalloon: {fileID: 1110577076}
   _orderPlaceForItems: {fileID: 2038869140}
+  _corVerde: {r: 0.16470589, g: 1, b: 0, a: 1}
+  _corAmarelo: {r: 1, g: 0.65882355, b: 0.08235294, a: 1}
+  _corVermelho: {r: 1, g: 0, b: 0, a: 1}
   _waitImage: {fileID: 1745841711}
 --- !u!1001 &651399790193538335
 PrefabInstance:
@@ -4719,9 +4869,57 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1785691205}
     - target: {fileID: 1279161210385469497, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
+      propertyPath: _corVerde.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1279161210385469497, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
+      propertyPath: _corVerde.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1279161210385469497, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
+      propertyPath: _corVerde.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1279161210385469497, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
+      propertyPath: _corVerde.r
+      value: 0.16458082
+      objectReference: {fileID: 0}
+    - target: {fileID: 1279161210385469497, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
       propertyPath: _regarImage
       value: 
       objectReference: {fileID: 349787410}
+    - target: {fileID: 1279161210385469497, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
+      propertyPath: _corAmarelo.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1279161210385469497, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
+      propertyPath: _corAmarelo.b
+      value: 0.081131995
+      objectReference: {fileID: 0}
+    - target: {fileID: 1279161210385469497, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
+      propertyPath: _corAmarelo.g
+      value: 0.66040355
+      objectReference: {fileID: 0}
+    - target: {fileID: 1279161210385469497, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
+      propertyPath: _corAmarelo.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1279161210385469497, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
+      propertyPath: _corVermelho.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1279161210385469497, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
+      propertyPath: _corVermelho.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1279161210385469497, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
+      propertyPath: _corVermelho.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1279161210385469497, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
+      propertyPath: _corVermelho.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6520852906363776510, guid: 1a28a70f4053ecc498d52e1efb2cb03d, type: 3}
       propertyPath: m_Name
       value: PlantableTerrain

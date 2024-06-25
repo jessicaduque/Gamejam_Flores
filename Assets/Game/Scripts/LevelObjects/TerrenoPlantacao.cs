@@ -18,7 +18,17 @@ public class TerrenoPlantacao : MonoBehaviour, IInteractable
     [SerializeField] Transform _signTransform;
     [SerializeField] GameObject _currentSign;
 
+    // Diferentes tipos de modelos de terra
+    private Renderer _thisRenderer;
+    [SerializeField] GameObject _terrainWithSeed, _terrainWithoutSeed;
+    [SerializeField] Texture _textureNotWet, _textureWet;
+    private AudioManager _audioManager => AudioManager.I;
     private Player _player => Player.I;
+
+    private void Awake()
+    {
+        _thisRenderer = GetComponent<Renderer>();
+    }
 
     #region Plant terrain
     private void PlantTerrain(OrgaoSO organ)
@@ -107,22 +117,28 @@ public class TerrenoPlantacao : MonoBehaviour, IInteractable
     public void InteractControl(Interactor interactor)
     {
         var holdable = _player._itemHeld.GetComponent<IHoldable>();
-        // Se tiver regador e a semente plantada sem água, regue a planta
-        if (holdable.holdableTypeName == "regador" && _hasPlant && !_isWatered)
+        if(holdable != null)
         {
-            Debug.Log("Terrain watered by player.");
-            WaterTerrain();
-            return;
-        }
-        // Se tiver segurando uma semente e a terra não tenha planta
-        if (holdable.holdableTypeName == "semente" && !_hasPlant)
-        {
-            PlantTerrain(_player._itemHeld.GetComponent<Semente>().GetOrganSO());
-            _player.ControlSemente(false);
-            return;
+            // Se tiver regador e a semente plantada sem água, regue a planta
+            if (holdable.holdableTypeName == "regador" && _hasPlant && !_isWatered)
+            {
+                Debug.Log("Terrain watered by player.");
+                _audioManager.PlaySfx("watering");
+                WaterTerrain();
+                return;
+            }
+            // Se tiver segurando uma semente e a terra não tenha planta
+            if (holdable.holdableTypeName == "semente" && !_hasPlant)
+            {
+                PlantTerrain(_player._itemHeld.GetComponent<Semente>().GetOrganSO());
+                _audioManager.PlaySfx("planting");
+                _player.ControlSemente(false);
+                return;
+            }
         }
 
         // Neste último caso a planta está pronta e o usuário de mãos vazias para pegá-lo
+        _audioManager.PlaySfx("reaping");
         CollectOrgan();
     }
     

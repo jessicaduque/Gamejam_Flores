@@ -11,6 +11,7 @@ public class Player : Singleton<Player>
 
     // Movement fields
     private Rigidbody _rb;
+    private Animator _animator;
     [SerializeField] float _maxSpeed = 8f;
     [SerializeField] private float _movementForce = 2f;
     [SerializeField] private Vector3 _forceDirection = Vector3.zero;
@@ -31,6 +32,8 @@ public class Player : Singleton<Player>
     private new void Awake()
     {
         _rb = this.GetComponent<Rigidbody>();
+
+        _animator = this.GetComponentInChildren<Animator>();
         _interactor = this.GetComponent<Interactor>();
         _playerActionsAsset = new ThirdPersonActionsAsset();
 
@@ -77,11 +80,22 @@ public class Player : Singleton<Player>
     #region Movement
     private void Movement()
     {
+        if (_move.ReadValue<Vector2>().x == 0 && _move.ReadValue<Vector2>().y == 0)
+        {
+            ControlMovementAnimation(false);
+        }
+        else
+        {
+            ControlMovementAnimation(true);
+        }
+
         _forceDirection += _move.ReadValue<Vector2>().x * Vector3.right * _movementForce;
         _forceDirection += _move.ReadValue<Vector2>().y * Vector3.forward * _movementForce;
 
         if (_forceDirection == Vector3.zero)
+        {
             _rb.velocity *= 800f / 1000f;
+        }
 
         _rb.AddForce(_forceDirection, ForceMode.Impulse);
         _forceDirection = Vector3.zero;
@@ -149,6 +163,15 @@ public class Player : Singleton<Player>
     }
     #endregion
 
+    #region Animation
+
+    private void ControlMovementAnimation(bool state)
+    {
+        _animator.SetBool("Walking", state);
+    }
+
+    #endregion
+
     #region Interaction
     private void DoInteractControl(InputAction.CallbackContext obj)
     {
@@ -182,6 +205,7 @@ public class Player : Singleton<Player>
         }
         _itemHeld = item;
         _isHoldingItem = state;
+        _animator.SetLayerWeight(1, (state ? 1 : 0));
     }
 
     public void ControlRegador(bool state)

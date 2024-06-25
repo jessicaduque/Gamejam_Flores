@@ -13,7 +13,7 @@ public class AudioManager : Singleton<AudioManager>
     [SerializeField] private AudioMixerGroup sfxGroup;
 
     [Header("Sounds")]
-    [SerializeField] private List<SomSO> musics = new List<SomSO>();
+    [SerializeField] private List<SomSO> music = new List<SomSO>();
     [SerializeField] private List<SomSO> sfx = new List<SomSO>();
 
     private AudioSource _musicSource1;
@@ -312,7 +312,7 @@ public class AudioManager : Singleton<AudioManager>
     }
     private SomSO GetMusic(string soundName)
     {
-        SomSO sound = musics.Find(music => music.soundName == soundName);
+        SomSO sound = music.Find(music => music.soundName == soundName);
 
         if (sound == null)
         {

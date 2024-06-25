@@ -15,6 +15,7 @@ public class Bancada : MonoBehaviour, IInteractable
     private Player _player => Player.I;
     private SOManager _soManager => SOManager.I;
     private GameController _gameController => GameController.I;
+    private AudioManager _audioManager => AudioManager.I;
 
     private void Start()
     {
@@ -24,6 +25,7 @@ public class Bancada : MonoBehaviour, IInteractable
     #region Client control
     public void AddClient()
     {
+        _audioManager.PlaySfx("bell");
         _currentClient = Instantiate(_soManager.RandomizeClientPrefab(), _clientTransformPoint.position, Quaternion.identity);
         _currentClientScript = _currentClient.GetComponent<Client>();
     }

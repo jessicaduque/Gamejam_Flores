@@ -136,8 +136,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 7.0132184, z: 1}
+  m_Center: {x: 0, y: 3.0066073, z: 0}
 --- !u!114 &884067961599055343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,3 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _signTransform: {fileID: 1564991435221598822}
   _currentSign: {fileID: 0}
+  _terrainWithSeed: {fileID: 0}
+  _terrainWithoutSeed: {fileID: 0}
+  _textureNotWet: {fileID: 0}
+  _textureWet: {fileID: 0}

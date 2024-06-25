@@ -28,10 +28,10 @@ public class Bancada : MonoBehaviour, IInteractable
         _audioManager.PlaySfx("bell");
         _currentClient = Instantiate(_soManager.RandomizeClientPrefab(), _clientTransformPoint.position, Quaternion.identity);
         _currentClientScript = _currentClient.GetComponent<Client>();
+        _currentClientScript.SetBancada(this);
     }
     public void RemoveClient()
     {
-        _currentClient = null;
         Destroy(_currentClient);
         _currentClientScript = null;
         _currentClient = null;
@@ -65,7 +65,7 @@ public class Bancada : MonoBehaviour, IInteractable
 
     public void InteractControl(Interactor interactor)
     {
-        throw new System.NotImplementedException();
+        _currentClientScript.RecieveOrgan(_player._itemHeld.GetComponent<Orgao>().GetOrganSO());
     }
     #endregion
 }

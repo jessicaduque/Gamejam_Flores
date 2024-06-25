@@ -4,6 +4,8 @@ using UnityEngine;
 public class TerrenoPlantacao : MonoBehaviour, IInteractable
 {
     public string interactionPrompt => throw new System.NotImplementedException();
+    // UI
+    private TerrenoPlantacaoUI _uiPlantacao;
 
     // Controle booleanos
     private bool _hasPlant;
@@ -27,7 +29,8 @@ public class TerrenoPlantacao : MonoBehaviour, IInteractable
 
     private void Awake()
     {
-        _thisRenderer = GetComponent<Renderer>();
+        _thisRenderer = this.GetComponent<Renderer>();
+        _uiPlantacao = this.GetComponent<TerrenoPlantacaoUI>();
     }
 
     #region Plant terrain
@@ -35,6 +38,7 @@ public class TerrenoPlantacao : MonoBehaviour, IInteractable
     {
         _hasPlant = true;
         _plantedOrganSO = organ;
+        _uiPlantacao.ControlRegarImage(true);
         _currentSign = Instantiate(_plantedOrganSO.organSignPrefab, _signTransform.position, Quaternion.identity);
     }
     #endregion
@@ -42,13 +46,24 @@ public class TerrenoPlantacao : MonoBehaviour, IInteractable
     private void WaterTerrain()
     {
         _isWatered = true;
+        _uiPlantacao.ControlRegarImage(false);
         StartCoroutine(PlantTime());
     }
     #endregion
     #region Time counts for plantations
     private IEnumerator PlantTime()
     {
-        yield return new WaitForSeconds((!_plantReady ? _plantedOrganSO.organTimeGrow : _plantedOrganSO.organTimeRot));
+        _uiPlantacao.TurnOnWait();
+        float time = 0;
+        while(time < (!_plantReady ? _plantedOrganSO.organTimeGrow : _plantedOrganSO.organTimeRot))
+        {
+            time += Time.deltaTime;
+            if (!_plantReady)
+                _uiPlantacao.UpdateWaitSpriteNormal(time / _plantedOrganSO.organTimeGrow);
+            else
+                _uiPlantacao.UpdateWaitSpriteColored(time / _plantedOrganSO.organTimeRot);
+            yield return null;
+        }
 
         if (!_plantReady)
         {
@@ -65,8 +80,15 @@ public class TerrenoPlantacao : MonoBehaviour, IInteractable
     #region End of Plantation
     private void CollectOrgan()
     {
+        _uiPlantacao.TurnOffWait();
+        // Controlar a placa
         Destroy(_currentSign);
         _currentSign = null;
+        // Spawnar o órgão
+        GameObject orgao = Instantiate((!_plantRotten ? _plantedOrganSO.organNormalPrefab : _plantedOrganSO.organRottenPrefab), transform.position, Quaternion.identity);
+        orgao.GetComponent<Orgao>().SetOrganDetails(_plantedOrganSO, _plantRotten);
+        _player.ControlOrgao(true, orgao);
+        // Resetar tudo do terreno
         ResetTerrain();
     }
     private void ResetTerrain()
@@ -116,9 +138,9 @@ public class TerrenoPlantacao : MonoBehaviour, IInteractable
 
     public void InteractControl(Interactor interactor)
     {
-        var holdable = _player._itemHeld.GetComponent<IHoldable>();
-        if(holdable != null)
+        if(_player.GetIsHoldingItem())
         {
+            var holdable = _player._itemHeld.GetComponent<IHoldable>();
             // Se tiver regador e a semente plantada sem água, regue a planta
             if (holdable.holdableTypeName == "regador" && _hasPlant && !_isWatered)
             {

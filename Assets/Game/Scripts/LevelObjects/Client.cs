@@ -17,6 +17,17 @@ public class Client : MonoBehaviour
     private Bancada _bancada;
 
     private SOManager _soManager => SOManager.I;
+
+    private void OnEnable()
+    {
+        InicialSetup();
+    }
+
+    private void OnDisable()
+    {
+        StopAllCoroutines();
+    }
+
     private void InicialSetup()
     {
         // Randomize amount of organs and which ones are wanted
@@ -29,6 +40,7 @@ public class Client : MonoBehaviour
         }
         // Define wait time
         _waitTime = _amountOrgansWanted * 15;
+        StartCoroutine(ClientWaitTime());
     }
     public void RecieveOrgan(OrgaoSO organ)
     {
@@ -43,10 +55,28 @@ public class Client : MonoBehaviour
             }
         }
         // Checar se órgãos faltando está nulo, para finalizar pedido do cliente
-
+        if(_organsSOLeft.Count == 0)
+        {
+            StopAllCoroutines();
+            ClientLeave();
+        }
     }
+
+    private IEnumerator ClientWaitTime()
+    {
+        float time = 0;
+        while(time < _waitTime)
+        {
+            time += Time.deltaTime;
+            yield return null;
+        }
+
+        ClientLeave();
+    }
+
     private void ClientLeave()
     {
+        //GameController.I.SetPoints();
         _bancada.RemoveClient();
     }
 

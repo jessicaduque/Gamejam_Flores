@@ -18,6 +18,7 @@ public class SOManager : Singleton<SOManager>
         {
             client = _possibleClientPrefabs[Random.Range(0, _possibleClientPrefabs.Length)];
         }
+        _lastClientPrefab = client;
         return client;
     }
 

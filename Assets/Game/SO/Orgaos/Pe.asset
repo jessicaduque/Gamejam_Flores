@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Pe
   m_EditorClassIdentifier: 
   organName: "P\xE9"
-  organNormalSprite: {fileID: 21300000, guid: c01f05fc94ff47d4b8e4dd083b91f111, type: 3}
+  organNormalSprite: {fileID: -1510573170, guid: c01f05fc94ff47d4b8e4dd083b91f111, type: 3}
   organNormalPrefab: {fileID: 2862275934414902200, guid: e1e5cc2d7c563a241822e55d9920128e, type: 3}
   organRottenPrefab: {fileID: 0}
-  organSeedPrefab: {fileID: 459979643743780403, guid: 312d6a0ae12eda443b4c5274006d4ac4, type: 3}
-  organSignPrefab: {fileID: 7485611745203253205, guid: 2c956e5a7e4c0644a97faaf14490fbd4, type: 3}
+  organSeedPrefab: {fileID: 1921058406531061589, guid: a57b3280674face4e811c8f96c5b0c32, type: 3}
+  organSignPrefab: {fileID: 4195865924530120233, guid: 6aecbf0b4c91ca743b5efeb0d40770bf, type: 3}
   organTimeGrow: 5
   organTimeRot: 5

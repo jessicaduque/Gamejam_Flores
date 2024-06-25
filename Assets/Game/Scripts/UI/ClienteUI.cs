@@ -37,9 +37,11 @@ public class ClienteUI : MonoBehaviour
             if(_currentImages[i].sprite == sprite)
             {
                 Destroy(_currentImages[i].gameObject);
+                _itemAmount--;
+                return;
             }
         }
-        _itemAmount--;
+        
     }
 
     public void TurnOffOrder()
@@ -50,7 +52,7 @@ public class ClienteUI : MonoBehaviour
 
     private void ResetItems()
     {
-        for(int i = 0; i < _itemAmount; i++)
+        for(int i = 0; i < _currentImages.Count; i++)
         {
             Destroy(_currentImages[i]);
         }

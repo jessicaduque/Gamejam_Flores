@@ -8,7 +8,6 @@ public class GameController : Singleton<GameController>
     [SerializeField] private int _maxClients = 7;
     private int _clientsLeft;
 
-
     // Info pontuação
     public float _finalScorePercent { get; private set; }
     private float _currentPoints = 0;
@@ -64,7 +63,7 @@ public class GameController : Singleton<GameController>
 
     public bool GetClientsStillLeft()
     {
-        return _clientsLeft > 0;
+        return _clientsLeft > 1;
     }
 
     #endregion

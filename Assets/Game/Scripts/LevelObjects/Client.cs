@@ -11,7 +11,7 @@ public class Client : MonoBehaviour
     private List<OrgaoSO> _organsSOGiven = new List<OrgaoSO>();
 
     // Sobre o tempo
-    private float _waitTime = 25f;
+    private float _waitTime = 35f;
 
     // Bancada onde cliente está
     private Bancada _bancada;
@@ -24,6 +24,7 @@ public class Client : MonoBehaviour
     private float _maxPoints;
 
     private SOManager _soManager => SOManager.I;
+    private GameController _gameController => GameController.I;
 
     private void OnDisable()
     {
@@ -33,10 +34,11 @@ public class Client : MonoBehaviour
     private void InicialSetup()
     {
         // Randomize amount of organs and which ones are wanted
-        _amountOrgansWanted = Random.Range(1, 4);
+        _amountOrgansWanted = Random.Range(1, 3);
         _organsSOWanted = new OrgaoSO[_amountOrgansWanted];
         for(int i=0; i< _organsSOWanted.Length; i++)
         {
+            _gameController.AddMaxPoints(5);
             _organsSOWanted[i] = _soManager.RandomizeOrganSO();
             _uiCliente.AddItemToOrder(_organsSOWanted[i].organNormalSprite);
             _organsSOLeft.Add(_organsSOWanted[i]);
@@ -50,17 +52,29 @@ public class Client : MonoBehaviour
         // Adicionar órgão na lista de órgãos já dados
         _organsSOGiven.Add(organ);
 
+        bool needsOrgan = false;
         // Retirar órgão da lista de órgãos faltando se existir
         for (int i=0; i<_organsSOLeft.Count; i++)
         {
-            if(_organsSOLeft[i] == organ)
+            if(_organsSOLeft[i] == organ && !needsOrgan)
             {
                 _uiCliente.RemoveItemSprite(organ.organNormalSprite);
                 _organsSOLeft.RemoveAt(i);
+                needsOrgan = true;
             }
         }
+
+        if (needsOrgan)
+        {
+            _gameController.AddCurrentPoints((isRotten ? 2 : 5));
+        }
+        else
+        {
+            _gameController.AddCurrentPoints((isRotten ? -3 : -1));
+        }
+
         // Checar se órgãos faltando está nulo, para finalizar pedido do cliente
-        if(_organsSOLeft.Count == 0)
+        if (_organsSOLeft.Count == 0)
         {
             ClientLeave();
         }
@@ -83,7 +97,6 @@ public class Client : MonoBehaviour
     private void ClientLeave()
     {
         StopAllCoroutines();
-        //GameController.I.SetPoints();
         _uiCliente.TurnOffWait();
         _uiCliente.TurnOffOrder();
         _bancada.RemoveClient();

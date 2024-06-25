@@ -23,7 +23,6 @@ public class TerrenoPlantacao : MonoBehaviour, IInteractable
     // Diferentes tipos de modelos de terra
     private Renderer _thisRenderer;
     [SerializeField] GameObject _terrainWithSeed, _terrainWithoutSeed;
-    [SerializeField] Texture _textureNotWet, _textureWet;
     private AudioManager _audioManager => AudioManager.I;
     private Player _player => Player.I;
 
@@ -36,6 +35,8 @@ public class TerrenoPlantacao : MonoBehaviour, IInteractable
     #region Plant terrain
     private void PlantTerrain(OrgaoSO organ)
     {
+        _terrainWithoutSeed.SetActive(false);
+        _terrainWithSeed.SetActive(true);
         _hasPlant = true;
         _plantedOrganSO = organ;
         _uiPlantacao.ControlRegarImage(true);
@@ -82,6 +83,8 @@ public class TerrenoPlantacao : MonoBehaviour, IInteractable
     {
         _uiPlantacao.TurnOffWait();
         StopAllCoroutines();
+        _terrainWithoutSeed.SetActive(true);
+        _terrainWithSeed.SetActive(false);
         // Controlar a placa
         Destroy(_currentSign);
         _currentSign = null;

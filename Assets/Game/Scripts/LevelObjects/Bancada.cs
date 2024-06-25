@@ -29,7 +29,7 @@ public class Bancada : MonoBehaviour, IInteractable
     public void AddClient()
     {
         _audioManager.PlaySfx("bell");
-        _currentClient = Instantiate(_soManager.RandomizeClientPrefab(), _clientTransformPoint.position, Quaternion.identity);
+        _currentClient = Instantiate(_soManager.RandomizeClientPrefab(), _clientTransformPoint.position, _clientTransformPoint.rotation);
         _currentClientScript = _currentClient.GetComponent<Client>();
         _currentClientScript.SetBancadaUI(this, this.GetComponent<ClienteUI>());
     }

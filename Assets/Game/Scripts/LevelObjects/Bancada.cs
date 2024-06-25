@@ -5,13 +5,16 @@ public class Bancada : MonoBehaviour, IInteractable
 {
     public string interactionPrompt => throw new System.NotImplementedException();
     // Times to wait before creating a new client
-    [SerializeField] float _startSceneClientSpawnTimeMin = 3;
-    [SerializeField] float _startSceneClientSpawnTimeMax = 7;
+    [SerializeField] float _startSceneClientSpawnTimeMin = 2f;
+    [SerializeField] float _startSceneClientSpawnTimeMax = 3.4f;
+
     // Point to instantiate client
     [SerializeField] private Transform _clientTransformPoint;
+
     // Info about current client at bancada
     private GameObject _currentClient;
     private Client _currentClientScript;
+
     private Player _player => Player.I;
     private SOManager _soManager => SOManager.I;
     private GameController _gameController => GameController.I;
@@ -28,7 +31,7 @@ public class Bancada : MonoBehaviour, IInteractable
         _audioManager.PlaySfx("bell");
         _currentClient = Instantiate(_soManager.RandomizeClientPrefab(), _clientTransformPoint.position, Quaternion.identity);
         _currentClientScript = _currentClient.GetComponent<Client>();
-        _currentClientScript.SetBancada(this);
+        _currentClientScript.SetBancadaUI(this, this.GetComponent<ClienteUI>());
     }
     public void RemoveClient()
     {
@@ -66,6 +69,7 @@ public class Bancada : MonoBehaviour, IInteractable
     public void InteractControl(Interactor interactor)
     {
         _currentClientScript.RecieveOrgan(_player._itemHeld.GetComponent<Orgao>().GetOrganSO());
+        _player.ControlOrgao(false);
     }
     #endregion
 }

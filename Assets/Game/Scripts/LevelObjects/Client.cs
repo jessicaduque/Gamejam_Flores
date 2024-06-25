@@ -11,17 +11,15 @@ public class Client : MonoBehaviour
     private List<OrgaoSO> _organsSOGiven = new List<OrgaoSO>();
 
     // Sobre o tempo
-    private float _waitTime;
+    private float _waitTime = 25f;
 
     // Bancada onde cliente está
     private Bancada _bancada;
 
-    private SOManager _soManager => SOManager.I;
+    // UI
+    private ClienteUI _uiCliente;
 
-    private void OnEnable()
-    {
-        InicialSetup();
-    }
+    private SOManager _soManager => SOManager.I;
 
     private void OnDisable()
     {
@@ -36,10 +34,11 @@ public class Client : MonoBehaviour
         for(int i=0; i< _organsSOWanted.Length; i++)
         {
             _organsSOWanted[i] = _soManager.RandomizeOrganSO();
+            _uiCliente.AddItemToOrder(_organsSOWanted[i].organNormalSprite);
             _organsSOLeft.Add(_organsSOWanted[i]);
         }
         // Define wait time
-        _waitTime = _amountOrgansWanted * 15;
+        _waitTime *= _amountOrgansWanted;
         StartCoroutine(ClientWaitTime());
     }
     public void RecieveOrgan(OrgaoSO organ)
@@ -51,6 +50,7 @@ public class Client : MonoBehaviour
         {
             if(_organsSOLeft[i] == organ)
             {
+                _uiCliente.RemoveItemSprite(organ.organNormalSprite);
                 _organsSOLeft.RemoveAt(i);
             }
         }
@@ -67,6 +67,7 @@ public class Client : MonoBehaviour
         float time = 0;
         while(time < _waitTime)
         {
+            _uiCliente.UpdateWaitSprite(time / _waitTime);
             time += Time.deltaTime;
             yield return null;
         }
@@ -77,14 +78,20 @@ public class Client : MonoBehaviour
     private void ClientLeave()
     {
         //GameController.I.SetPoints();
+        _uiCliente.TurnOffWait();
+        _uiCliente.TurnOffOrder();
         _bancada.RemoveClient();
     }
 
     #region Set Bancada
 
-    public void SetBancada(Bancada bancada)
+    public void SetBancadaUI(Bancada bancada, ClienteUI ui)
     {
         _bancada = bancada;
+        _uiCliente = ui;
+        _uiCliente.TurnOnWait();
+        _uiCliente.TurnOnOrder();
+        InicialSetup();
     }
 
     #endregion

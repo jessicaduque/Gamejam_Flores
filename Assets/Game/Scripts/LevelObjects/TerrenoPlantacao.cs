@@ -81,6 +81,7 @@ public class TerrenoPlantacao : MonoBehaviour, IInteractable
     private void CollectOrgan()
     {
         _uiPlantacao.TurnOffWait();
+        StopAllCoroutines();
         // Controlar a placa
         Destroy(_currentSign);
         _currentSign = null;

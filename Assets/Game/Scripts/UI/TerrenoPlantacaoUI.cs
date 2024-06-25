@@ -18,7 +18,7 @@ public class TerrenoPlantacaoUI : MonoBehaviour
     public void TurnOnWait()
     {
         _waitImage.gameObject.SetActive(true);
-        _waitImage.fillAmount = 1;
+        _waitImage.fillAmount = 0;
     }
 
     public void UpdateWaitSpriteNormal(float fillAmount)

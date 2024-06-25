@@ -15,7 +15,7 @@ MonoBehaviour:
   organName: "P\xE9"
   organNormalSprite: {fileID: -1510573170, guid: c01f05fc94ff47d4b8e4dd083b91f111, type: 3}
   organNormalPrefab: {fileID: 2862275934414902200, guid: e1e5cc2d7c563a241822e55d9920128e, type: 3}
-  organRottenPrefab: {fileID: 0}
+  organRottenPrefab: {fileID: 2862275934414902200, guid: cb59cdaa5f39ae34e8152120b893df62, type: 3}
   organSeedPrefab: {fileID: 1921058406531061589, guid: a57b3280674face4e811c8f96c5b0c32, type: 3}
   organSignPrefab: {fileID: 4195865924530120233, guid: 6aecbf0b4c91ca743b5efeb0d40770bf, type: 3}
   organTimeGrow: 5

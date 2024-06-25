@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   organName: Olho
   organNormalSprite: {fileID: -61758378, guid: 5c87d4f14a5e7d1489101b6f1a90a618, type: 3}
-  organNormalPrefab: {fileID: 4189912004335283537, guid: 80b4f101bab030541a4062dea8cfd09d, type: 3}
-  organRottenPrefab: {fileID: 0}
+  organNormalPrefab: {fileID: 2862275934414902200, guid: b305fee5abcd0194cb4b2d647ab3a282, type: 3}
+  organRottenPrefab: {fileID: 2862275934414902200, guid: 1f6b9d17354acaa49a5f2dab84bead16, type: 3}
   organSeedPrefab: {fileID: 1921058406531061589, guid: 1e8e4fce7fdfb114ea51903e17ef7efb, type: 3}
   organSignPrefab: {fileID: 4195865924530120233, guid: 900813f39bc803b4db7963e68186b547, type: 3}
   organTimeGrow: 3

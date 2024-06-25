@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   organName: "M\xE3o"
   organNormalSprite: {fileID: 1430597082, guid: 6b986ea611f097f4aacc224c39a50051, type: 3}
-  organNormalPrefab: {fileID: 8153122381863059714, guid: b895bfed4b4354d43b060123987f8370, type: 3}
-  organRottenPrefab: {fileID: 0}
+  organNormalPrefab: {fileID: 2862275934414902200, guid: 8f2d158f69b44c74ca61bd3068af25d5, type: 3}
+  organRottenPrefab: {fileID: 2862275934414902200, guid: 3506ffff4483ce0439a1f7993a81f9dc, type: 3}
   organSeedPrefab: {fileID: 1921058406531061589, guid: e50551b5936bdd847b73e1a493a41094, type: 3}
   organSignPrefab: {fileID: 4195865924530120233, guid: 8a67ae39cbf513a46b2f98c875e854b8, type: 3}
   organTimeGrow: 7

@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   organName: Bundinha
   organNormalSprite: {fileID: 1745591354, guid: b085df4cadbfa3f47bc44a2f4f14a7c3, type: 3}
-  organNormalPrefab: {fileID: 769918429169887432, guid: e8f35b5996f0c1c41b930adba01bc68b, type: 3}
-  organRottenPrefab: {fileID: 0}
+  organNormalPrefab: {fileID: 2862275934414902200, guid: fb2a569acc4deb249a80736599a24f60, type: 3}
+  organRottenPrefab: {fileID: 2862275934414902200, guid: c327fb9c1d34fdd468ea6ed203d3c95a, type: 3}
   organSeedPrefab: {fileID: 1921058406531061589, guid: 24a0137750bea6d4fbfba696998322c5, type: 3}
   organSignPrefab: {fileID: 4195865924530120233, guid: 53d67749105458342834db3c242ab2fe, type: 3}
   organTimeGrow: 9

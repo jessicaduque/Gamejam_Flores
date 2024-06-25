@@ -1,11 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Trash : MonoBehaviour, IInteractable
 {
     public string interactionPrompt => throw new System.NotImplementedException();
     private Player _player => Player.I;
+    private AudioManager _audioManager => AudioManager.I;
     #region Interaction
     public bool CanInteract()
     {
@@ -24,6 +23,7 @@ public class Trash : MonoBehaviour, IInteractable
     {
         var item = _player._itemHeld.GetComponent<IHoldable>();
         Debug.Log("Player throwing away " + _player._itemHeld.name + ".");
+        _audioManager.PlaySfx("trash");
         if (item.holdableTypeName == "semente")
         {
             _player.ControlSemente(false);

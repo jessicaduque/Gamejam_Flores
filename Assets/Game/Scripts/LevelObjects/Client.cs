@@ -19,12 +19,9 @@ public class Client : MonoBehaviour
     // UI
     private ClienteUI _uiCliente;
 
-    // Pontuação
-    private float _currentPoints;
-    private float _maxPoints;
-
     private SOManager _soManager => SOManager.I;
     private GameController _gameController => GameController.I;
+    private AudioManager _audioManager => AudioManager.I;
 
     private void OnDisable()
     {
@@ -35,6 +32,9 @@ public class Client : MonoBehaviour
     {
         // Randomize amount of organs and which ones are wanted
         _amountOrgansWanted = Random.Range(1, 3);
+        // Make there be higher chances of player getting 1
+        if (_amountOrgansWanted == 2 && Random.Range(1, 4) == 2)
+            _amountOrgansWanted = 1;
         _organsSOWanted = new OrgaoSO[_amountOrgansWanted];
         for(int i=0; i< _organsSOWanted.Length; i++)
         {
@@ -66,10 +66,12 @@ public class Client : MonoBehaviour
 
         if (needsOrgan)
         {
+            _audioManager.PlaySfx("correctitem");
             _gameController.AddCurrentPoints((isRotten ? 2 : 5));
         }
         else
         {
+            _audioManager.PlaySfx("wrongitem");
             _gameController.AddCurrentPoints((isRotten ? -3 : -1));
         }
 

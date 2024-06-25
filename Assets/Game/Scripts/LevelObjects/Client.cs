@@ -19,6 +19,10 @@ public class Client : MonoBehaviour
     // UI
     private ClienteUI _uiCliente;
 
+    // Pontuação
+    private float _currentPoints;
+    private float _maxPoints;
+
     private SOManager _soManager => SOManager.I;
 
     private void OnDisable()
@@ -41,10 +45,11 @@ public class Client : MonoBehaviour
         _waitTime *= _amountOrgansWanted;
         StartCoroutine(ClientWaitTime());
     }
-    public void RecieveOrgan(OrgaoSO organ)
+    public void RecieveOrgan(OrgaoSO organ, bool isRotten)
     {
         // Adicionar órgão na lista de órgãos já dados
         _organsSOGiven.Add(organ);
+
         // Retirar órgão da lista de órgãos faltando se existir
         for (int i=0; i<_organsSOLeft.Count; i++)
         {
@@ -57,11 +62,11 @@ public class Client : MonoBehaviour
         // Checar se órgãos faltando está nulo, para finalizar pedido do cliente
         if(_organsSOLeft.Count == 0)
         {
-            StopAllCoroutines();
             ClientLeave();
         }
     }
 
+    #region Client Control
     private IEnumerator ClientWaitTime()
     {
         float time = 0;
@@ -77,13 +82,16 @@ public class Client : MonoBehaviour
 
     private void ClientLeave()
     {
+        StopAllCoroutines();
         //GameController.I.SetPoints();
         _uiCliente.TurnOffWait();
         _uiCliente.TurnOffOrder();
         _bancada.RemoveClient();
     }
 
-    #region Set Bancada
+    #endregion
+
+    #region Set 
 
     public void SetBancadaUI(Bancada bancada, ClienteUI ui)
     {

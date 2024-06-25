@@ -1,19 +1,22 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.UI;
 using Utils.Singleton;
 using DG.Tweening;
-using System.Collections;
+using TMPro;
 
 public class LevelUIManager : Singleton<LevelUIManager>
 {
     //[SerializeField] private GameObject _pausePanel; // Pause panel for control
     [SerializeField] private GameObject _endPanel; // End panel for conttrol
-
+    [SerializeField] private TextMeshProUGUI t_clientsLeft;
     private BlackScreenController _blackScreenController => BlackScreenController.I;
     private AudioManager _audioManager => AudioManager.I;
     private new void Awake()
     { }
+
+    public void UpdateClientsLeftText(int amount)
+    {
+        t_clientsLeft.text = "Clientes restantes: " + amount.ToString();
+    }
 
     #region Control Panels
 

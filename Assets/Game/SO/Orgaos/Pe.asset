@@ -19,4 +19,4 @@ MonoBehaviour:
   organSeedPrefab: {fileID: 1921058406531061589, guid: a57b3280674face4e811c8f96c5b0c32, type: 3}
   organSignPrefab: {fileID: 4195865924530120233, guid: 6aecbf0b4c91ca743b5efeb0d40770bf, type: 3}
   organTimeGrow: 5
-  organTimeRot: 5
+  organTimeRot: 7

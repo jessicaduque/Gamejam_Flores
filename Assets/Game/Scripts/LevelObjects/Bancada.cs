@@ -68,7 +68,8 @@ public class Bancada : MonoBehaviour, IInteractable
 
     public void InteractControl(Interactor interactor)
     {
-        _currentClientScript.RecieveOrgan(_player._itemHeld.GetComponent<Orgao>().GetOrganSO());
+        var organ = _player._itemHeld.GetComponent<Orgao>();
+        _currentClientScript.RecieveOrgan(organ.GetOrganSO(), organ.GetOrganRotten());
         _player.ControlOrgao(false);
     }
     #endregion

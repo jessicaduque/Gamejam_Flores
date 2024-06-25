@@ -35,5 +35,10 @@ public class Orgao : MonoBehaviour, IHoldable
         return _organSO;
     }
 
+    public bool GetOrganRotten()
+    {
+        return _organRotten;
+    }
+
     #endregion
 }

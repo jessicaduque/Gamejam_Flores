@@ -19,12 +19,9 @@ public class Client : MonoBehaviour
     // UI
     private ClienteUI _uiCliente;
 
-    // Pontuação
-    private float _currentPoints;
-    private float _maxPoints;
-
     private SOManager _soManager => SOManager.I;
     private GameController _gameController => GameController.I;
+    private AudioManager _audioManager => AudioManager.I;
 
     private void OnDisable()
     {
@@ -69,10 +66,12 @@ public class Client : MonoBehaviour
 
         if (needsOrgan)
         {
+            _audioManager.PlaySfx("correctitem");
             _gameController.AddCurrentPoints((isRotten ? 2 : 5));
         }
         else
         {
+            _audioManager.PlaySfx("wrongitem");
             _gameController.AddCurrentPoints((isRotten ? -3 : -1));
         }
 
